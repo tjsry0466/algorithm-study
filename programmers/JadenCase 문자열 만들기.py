@@ -6,11 +6,9 @@
 def solution(s):
 	s = s.lower()
 	answer = ""
-	cursor = 0
 	
 	isNum = False
 	isString = False
-	
 
 	for i in range(len(s)):
 		if (s[i] == " "):
