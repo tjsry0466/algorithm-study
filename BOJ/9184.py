@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/9184
 
-# 아래와 같으 재귀함수가 있다.
+# 아래와 같은 재귀함수가 있다.
 # if a <= 0 or b <= 0 or c <= 0, then w(a, b, c) returns:
 #     1
 
