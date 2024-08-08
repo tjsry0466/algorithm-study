@@ -18,15 +18,15 @@ dy = [1, -1, 0, 0]
 
 d = [list(map(int, input())) for _ in range(N)]
 q = deque()
-check = [[False] * N for _ in range(N)]
+visited = [[False] * N for _ in range(N)]
 
 answer = 0
 counts = []
 
 for i in range(N):
     for j in range(N):
-        if check[i][j] == False and d[i][j] == 1:
-            check[i][j] = True
+        if visited[i][j] == False and d[i][j] == 1:
+            visited[i][j] = True
             q.append((i, j))
             answer+=1
             counts.append(1)
@@ -36,9 +36,9 @@ for i in range(N):
                 for k in range(4):
                     nx, ny = x+dx[k], y+dy[k]
                     if 0 <= nx < N and 0 <= ny < N:
-                        if d[nx][ny] == 1 and check[nx][ny] == False:
+                        if d[nx][ny] == 1 and visited[nx][ny] == False:
                             q.append((nx, ny))
-                            check[nx][ny] = True
+                            visited[nx][ny] = True
                             counts[len(counts)-1] +=1
                             
 print(answer)
