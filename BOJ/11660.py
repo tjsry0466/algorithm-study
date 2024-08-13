@@ -39,12 +39,6 @@ for i in range(1, N+1):
 	for j in range(1, N+1):
 		sumBoard[i][j] = sumBoard[i-1][j] + sumBoard[i][j-1] - sumBoard[i-1][j-1] + board[i-1][j-1]
 
-results = []
 for x1, y1, x2, y2 in arr:
     result = sumBoard[x2][y2] - sumBoard[x1-1][y2] - sumBoard[x2][y1-1] + sumBoard[x1-1][y1-1]
-    results.append(result)
-
-# 결과 출력
-for result in results:
     print(result)
-
