@@ -11,12 +11,13 @@
 # 1원을 (2, 4, 6, ... 998) // 2 개까지 사용하고 나머지를 2원을 사용하면 된다.
 
 import sys
-T = int(sys.stdin.readline())
+input = sys.stdin.readline
+T = int(input())
 
 for _ in range(T):
-	N = int(sys.stdin.readline())
-	coins = list(map(int, sys.stdin.readline().split()))
-	M = int(sys.stdin.readline())
+	N = int(input())
+	coins = list(map(int, input().split()))
+	M = int(input())
 
 	dp = [0] * (M+1)
 	dp[0] = 1
