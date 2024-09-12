@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/7562
+
 from collections import deque
 
 dy = [-2, -1, 1, 2, 2, 1, -1, -2]
