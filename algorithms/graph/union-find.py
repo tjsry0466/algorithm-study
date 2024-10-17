@@ -55,10 +55,10 @@ if __name__ == "__main__":
     uf.union(8, 9)
 
     # 같은 집합에 속해 있는지 확인
-    print(uf.connected(1, 5))
-    print(uf.connected(5, 7))
-    print(uf.connected(4, 9))
+    print(uf.connected(1, 5))  # True 출력
+    print(uf.connected(5, 7))  # True 출력
+    print(uf.connected(4, 9))  # False 출력
 
     # 다른 집합을 합침
     uf.union(4, 9)
-    print(uf.connected(4, 9))
+    print(uf.connected(4, 9))  # True 출력
