@@ -10,7 +10,7 @@ for _ in range(n):
     graph.append(list(map(int, input())))
 
 visited = [[False] * m for _ in range(n)]
-result = 999999
+result = 0
 
 
 def bfs(graph, visited, x, y):
@@ -29,7 +29,7 @@ def bfs(graph, visited, x, y):
                     visited[nx][ny] = True
 
                     if nx == n - 1 and ny == m - 1:
-                        result = min(result, count + 1)
+                        result = count + 1
                         return
 
 
