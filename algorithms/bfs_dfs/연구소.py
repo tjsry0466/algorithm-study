@@ -1,5 +1,5 @@
-# 0은 빈 칸, 1은 벽, 2는 바이러스
-# 세곳을 골라 벽을 세우고, 바이러스가 퍼지지 않는 영역 크기의 최댓값 구하기
+# # 0은 빈 칸, 1은 벽, 2는 바이러스
+# # 세곳을 골라 벽을 세우고, 바이러스가 퍼지지 않는 영역 크기의 최댓값 구하기
 
 from collections import deque
 
@@ -69,21 +69,27 @@ for i in range(len(empty)):
 
 print(result)
 
-import copy
-
 # --------------------------------
+import copy
 import sys
 from collections import deque
 from itertools import combinations
 
-# 입력 및 초기 설정은 동일
+n, m = map(int, input().split())
 
-# 빈칸 위치 미리 저장
+graph = []
+for _ in range(n):
+    graph.append(list(map(int, input().split())))
+
+# 빈칸과 바이러스 위치 미리 저장
 empty_spaces = []
-for r in range(N):
-    for c in range(M):
+viruses = []
+for r in range(n):
+    for c in range(m):
         if graph[r][c] == 0:
             empty_spaces.append((r, c))
+        elif graph[r][c] == 2:
+            viruses.append((r, c))
 
 max_safe_area = 0
 
@@ -101,7 +107,7 @@ for walls in combinations(empty_spaces, 3):
         r, c = queue.popleft()
         for dr, dc in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
             nr, nc = r + dr, c + dc
-            if 0 <= nr < N and 0 <= nc < M and temp_graph[nr][nc] == 0:
+            if 0 <= nr < n and 0 <= nc < m and temp_graph[nr][nc] == 0:
                 temp_graph[nr][nc] = 2
                 queue.append((nr, nc))
 
